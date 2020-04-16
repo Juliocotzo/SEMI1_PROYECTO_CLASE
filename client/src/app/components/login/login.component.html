@@ -1,0 +1,26 @@
+<div class="col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Usuario</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Enter usuario" #usuario autofocus>
+            <small id="emailHelp" class="form-text text-muted">Nunca compartiremos sus datos con nadie
+              más..</small>
+          </div>
+          <div class="form-group">
+            <div class="a-column a-span5">
+              <label for="exampleInputPassword1" style="padding-right: 46%">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" #password>
+            </div>
+  
+          </div>
+  
+          <button type="submit" class="btn btn-success btn-block" (click)="logIn(usuario,password)">Log in</button>
+          <hr>
+          <button type="submit" class="btn btn-info btn-block" routerLink="/form">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
