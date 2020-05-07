@@ -4,6 +4,8 @@ import { HomeComponent } from './components/home/home.component';
 import { FormComponent } from './components/form/form.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { RecetaComponent } from './components/receta/receta.component';
+import { RecetasComponent } from './components/recetas/recetas.component';
 
 
 const routes: Routes = [
@@ -23,6 +25,12 @@ const routes: Routes = [
   },{
     path: 'profile',
     component: ProfileComponent
+  },{
+    path: 'receta/:id',
+    component: RecetaComponent
+  },{
+    path: 'recetas',
+    component: RecetasComponent
   }
 ];
 

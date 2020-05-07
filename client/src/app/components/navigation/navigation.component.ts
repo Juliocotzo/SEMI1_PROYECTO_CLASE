@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -8,21 +8,22 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
-  get isLogin(){
-    if(localStorage.getItem("usuario") != null){
+  get isLogin() {
+    if (localStorage.getItem('usuario') != null) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
 
-  logOut(){
-    localStorage.removeItem("usuario");
+  logOut() {
+    localStorage.removeItem('usuario');
     this.router.navigate(['/home']);
   }
 }

@@ -10,8 +10,11 @@ import { FormComponent } from './components/form/form.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HttpClient } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { RecetasComponent } from './components/recetas/recetas.component';
+import { RecetaComponent } from './components/receta/receta.component';
 
+import {NgxImageCompressService} from 'ngx-image-compress';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,15 +22,17 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     FormComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    RecetasComponent,
+    RecetaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule 
+    HttpClientModule
   ],
-  providers: [],
+  providers: [NgxImageCompressService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

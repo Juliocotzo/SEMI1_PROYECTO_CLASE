@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-sm-9">
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="custom-file">
+          <input name="imageUrl" type="file" class="custom-file-input" id="inputGroupFile02" accept="image/*"
+                 (change)="handleInputChange($event)">
+          <ng-container *ngIf="isImageSaved; else elseTemplate1">
+            <label class="custom-file-label" for="inputGroupFile02">{{this.fileObject.name}}</label>
+          </ng-container>
+          <ng-template #elseTemplate1>
+            <label class="custom-file-label" for="inputGroupFile02">Seleccione una imagen</label>
+          </ng-template>
+
+        </div>
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-success " (click)="upload()">Aceptar</button>
+        </div>
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-danger " (click)="removeImage()">Clear</button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+
+          <ng-container *ngIf="isImageSaved; else elseTemplate">
+            <figure class="card card-product">
+              <div class="img-wrap"><img [src]="imageSrc"></div>
+            </figure>
+          </ng-container>
+          <ng-template #elseTemplate>
+            <figure class="card card-product">
+              <div class="img-wrap"><img src="./../../assets/placeholder.png" style="max-width:200px;max-height:200px">
+              </div>
+
+            </figure>
+          </ng-template>
+
+        </div>
+
+
+      </div> <!-- row.// -->
+      <hr>
+      <div class="container">
+        <div class="row">
+
+
+          <div class="col-md-4" *ngFor='let paths of Recetas'>
+            <figure class="card card-product">
+
+
+              <div class="img-wrap">
+                <a [routerLink]="['/receta',paths.id]"><img src="{{paths.photo}}"></a>
+
+              </div>
+            </figure>
+          </div>
+
+
+        </div> <!-- row.// -->
+      </div>
+    </div>
+  </div>

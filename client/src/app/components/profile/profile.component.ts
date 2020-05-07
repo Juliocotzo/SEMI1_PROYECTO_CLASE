@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../../services/usuario/usuario.service';
-import { Router } from '@angular/router';
-import { Usuario } from '../../models/usuario';
+import {Component, OnInit} from '@angular/core';
+import {UsuarioService} from '../../services/usuario/usuario.service';
+import {Router} from '@angular/router';
+import {Usuario} from '../../models/usuario';
 
 @Component({
   selector: 'app-profile',
@@ -10,9 +10,10 @@ import { Usuario } from '../../models/usuario';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private usuariosService: UsuarioService, private router: Router) { }
+  constructor(private usuariosService: UsuarioService, private router: Router) {
+  }
 
-  userLocalStorage : any = {};
+  userLocalStorage: any = {};
   usuario: Usuario = {
     id_usuario: 0,
     nombre_completo: '',
@@ -21,20 +22,14 @@ export class ProfileComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    if (localStorage.getItem("usuario") != null) {
-      this.userLocalStorage = JSON.parse(localStorage.getItem("usuario"));
+    if (localStorage.getItem('usuario') != null) {
+      this.userLocalStorage = JSON.parse(localStorage.getItem('usuario'));
+      this.usuario = this.userLocalStorage;
     } else {
-      console.log("ACCESO DENEGADO");
+      console.log('ACCESO DENEGADO');
       this.router.navigate(['/error']);
     }
-    this.usuariosService.getUsuario(this.userLocalStorage.id_usuario).subscribe(
-      res => {
-        console.log(res);
-        this.usuario = res[0];
-        console.log(this.usuario);
-      },
-      err => console.log(err)
-    );
   }
 
 }
+

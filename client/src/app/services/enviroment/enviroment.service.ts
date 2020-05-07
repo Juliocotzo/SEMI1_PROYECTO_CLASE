@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class EnviromentService {
 
-  
-  API_URI = `https://proyecto-seminario.herokuapp.com`;
+
+  API_URI = `https://q37jramjsh.execute-api.us-east-1.amazonaws.com/dev`;
   constructor() { }
 }

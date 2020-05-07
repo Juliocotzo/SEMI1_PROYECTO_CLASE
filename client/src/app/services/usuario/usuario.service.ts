@@ -12,12 +12,8 @@ export class UsuarioService {
     private http: HttpClient,
     private env: EnviromentService)  { }
 
-  getUsuario(id:string){
-    return this.http.get(`${this.env.API_URI}/usuario/${id}`);
-  }
-
   registrar(usuario: Usuario){
-    return this.http.post(`${this.env.API_URI}/register`, usuario);
+    return this.http.post(`${this.env.API_URI}/usuario`, usuario);
   }
 
   auth(usuario: Usuario){
