@@ -1,16 +1,59 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-        <img src="{{Photo}}" alt="Pulpit Rock" width="350" height="400">
+    <div class="col-md-5">
+      <img src="{{Photo}}" alt="Pulpit Rock" width="350" height="400">
     </div>
-    <div class="col-md-6">
-      <div class="col-md-12">
-        A design specification provides explicit information about the requirements for a product and how the product is to be put together. It is the most traditional kind of specification, having been used historically in public contracting for buildings, highways, and other public works, and represents the kind of thinking in which architects and engineers have been trained.
+    <div class="col-md-7">
+      <div class="col-md-20">
+        <h4>Receta</h4>
       </div>
-      <div class="col-md-12">
-        <a href="#" class="btn btn-primary">Download</a>
-        <a href="#" class="btn btn-info">Images</a>
+      <br>
+      <div class="col-md-20">
+        {{RecetaText}}
+      </div>
+      <br>
+      <div class="col-md-20">
+        <a (click)="analizarReceta()" class="btn btn-success">Analizar Receta</a>
+      </div>
+
+      <div *ngIf="Analisis">
+        <hr>
+        <h4>Analisis Receta</h4>
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+          <div class="row">
+            <div class="col-md-6">
+              <label>Medicina</label>
+            </div>
+            <div class="col-md-6">
+              <p>{{recetaDescirpcion.medicina}} {{recetaDescirpcion.fuerza}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Via de Administracion</label>
+            </div>
+            <div class="col-md-6">
+              <p>{{recetaDescirpcion.modo}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Frecuencia</label>
+            </div>
+            <div class="col-md-6">
+              <p>{{recetaDescirpcion.frecuencia}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Dosis</label>
+            </div>
+            <div class="col-md-6">
+              <p>{{recetaDescirpcion.dosis}}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>

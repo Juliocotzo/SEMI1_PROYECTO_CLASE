@@ -45,6 +45,8 @@ export class RecetasComponent implements OnInit {
     usuario: ''
   };
 
+
+
   Photos: any = [];
   pathsPhotos = [];
 

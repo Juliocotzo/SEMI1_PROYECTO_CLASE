@@ -3,7 +3,9 @@ import {EnviromentService} from '../enviroment/enviroment.service';
 import {HttpClient} from '@angular/common/http';
 import {UploadFoto} from '../../models/upload-foto';
 import {UserPhoto} from '../../models/user-photo';
-import {UserId} from "../../models/user-id";
+import {UserId} from '../../models/user-id';
+import {Imagen} from '../../models/imagen';
+import {Receta} from '../../models/receta';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +27,13 @@ export class RecetasService {
 
   getReceta(id: UserId) {
     return this.http.post(`${this.env.API_URI}/getreceta`, id);
+  }
+
+  getTextReceta(imagen: Imagen) {
+    return this.http.post(`${this.env.API_URI}/recetagettext`, imagen);
+  }
+
+  getAnalisis(receta: Receta){
+    return this.http.post(`${this.env.API_URI}/analizarreceta`, receta);
   }
 }
